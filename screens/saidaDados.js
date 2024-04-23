@@ -8,18 +8,27 @@ export default function saidaDados({ navigation, route }) {
   const dadosRecebidos = route.params.dados;
 
 
+  const { massa, calorLatente } = dadosRecebidos;
 
-  
+
+  const calcularCalorLatente = () => {
+      const calorLatenteTotal = massa * calorLatente;
+      return calorLatenteTotal;
+  };
+
+
+
     return (
       <View style={styles.container}>
-            <Text>Valor 1: {dadosRecebidos.valor1}</Text>
-            <Text>Valor 2: {dadosRecebidos.valor2}</Text>
-            <Text>Valor 3: {dadosRecebidos.valor3}</Text>
-        <Button
+      <Text>Massa: {massa} kg</Text>
+      <Text>Calor latente específico: {calorLatente} J/kg</Text>
+      <Text>Calor latente total: {calcularCalorLatente()} J</Text>
+      <Button
           title="Sair"
-          onPress={() => navigation.goBack()}/>
-        <StatusBar style="auto" />
-      </View>
+          onPress={() => navigation.goBack()}
+      />
+      <StatusBar style="auto" />
+  </View>
     );
   }
   
