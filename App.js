@@ -5,28 +5,28 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //import screens
-import entradaDados from './app-screens/screens/entradaDados';
-import saidaDados from './app-screens/screens/saidaDados';
+import entradaDados from './screens/entradaDados';
+import saidaDados from './screens/saidaDados';
+
+
+const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Entrada Dados" component={entradaDados} />
-      <Stack.Screen name="Saída Dados" component={saidaDados} />
+      <Stack.Screen name="entradaDados" component={entradaDados} />
+      <Stack.Screen name="saidaDados" component={saidaDados} />
     </Stack.Navigator>
   );
 }
 
-
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+    );
 }
-
 
 const styles = StyleSheet.create({
   container: {
