@@ -1,6 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+//import screens
+import entradaDados from './app-screens/screens/entradaDados';
+import saidaDados from './app-screens/screens/saidaDados';
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Entrada Dados" component={entradaDados} />
+      <Stack.Screen name="Saída Dados" component={saidaDados} />
+    </Stack.Navigator>
+  );
+}
+
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -9,6 +26,7 @@ export default function App() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
