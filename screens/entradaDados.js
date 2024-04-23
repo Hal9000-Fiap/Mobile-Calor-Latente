@@ -1,13 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import react from 'react';
 
 export default function entradaDados({ navigation }) {
+    const x = {
+        teste: 'teste'
+    }
+
     return (
       <View style={styles.container}>
         <Text>Página para calculo da lei calor latente</Text>
         <Button
-          title="Clique aqui para saber mais sobre o APP"
-          onPress={() => navigation.navigate('About')}/>
+          title="Calcular"
+          onPress={() => navigation.navigate('saidaDados')}/>
         <StatusBar style="auto" />
       </View>
     );

@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import react from 'react';
+
+
 
 export default function saidaDados({ navigation }) {
+
     return (
       <View style={styles.container}>
-        <Text>FIAP</Text>
-        <Text>Resultado.</Text>
+        <Text> {x.teste} </Text> 
         <Button
           title="Sair"
           onPress={() => navigation.goBack()}/>
